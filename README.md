@@ -20,7 +20,7 @@ A really simple utility module for tracking user activity on a tab. Usefull to c
 
 ## Install
 
-`npm i idle-ts`
+`npm i @amasotti/idle-ts`
 
 ## Usage in your script
 
