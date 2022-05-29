@@ -25,7 +25,7 @@ A really simple utility module for tracking user activity on a tab. Usefull to c
 ## Usage in your script
 
 ```js
-// Those are the default values
+// Those are the default values that can be overwritten when importing and initializing the class `IdleTs`
 var idle = new IdleJs({
   idle: 10000, // idle time in ms
   events: ['mousemove', 'keydown', 'mousedown', 'touchstart'], // events that will trigger the idle resetter
@@ -64,14 +64,19 @@ idle.reset({
 })
 ```
 
+## Allowed Options / Customization
+
+```js
+
+
+
+
 ## Running example
 
 The project is built using [Vite](https://vitejs.dev/).
 
-### Simply start the server [Vite](https://vitejs.dev/)
+> yarn run dev
 
-`pnpm dev -- --port 3030`
+or 
 
-Need to choose an other port ? `pnpm dev -- --port 6060`
-
-Open the local url, in your browser: `http://localhost:3030` or `http://localhost:THE_PORT_YOU_CHOOSE` 
+> yarn run preview

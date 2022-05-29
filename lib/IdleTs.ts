@@ -5,7 +5,6 @@ class IdleTs {
     // Properties
     private readonly defaults: IdleTsSettings
     public settings : IdleTsSettings
-    public visibilityEvents: Array<string> = ['visibilitychange', 'webkitvisibilitychange', 'mozvisibilitychange', 'msvisibilitychange']
     public idle: boolean | number = false
     public visible: boolean = true
     public clearTimeout?: Function | null
@@ -17,6 +16,7 @@ class IdleTs {
         this.defaults = {
             idle: 10000,
             events: ['mousemove', 'keydown', 'mousedown', 'touchstart'],
+            visibilityEvents: ['visibilitychange', 'webkitvisibilitychange', 'mozvisibilitychange', 'msvisibilitychange'],
             onIdle: () => {},
             onActive: () => {},
             onHide: () => {},
@@ -95,7 +95,7 @@ class IdleTs {
         bulkAddEventListener(window, this.settings.events, this.idlenessEventsHandler);
 
         if (this.settings.onShow || this.settings.onHide) {
-            bulkAddEventListener(window, this.visibilityEvents, this.visibilityEventsHandler);
+            bulkAddEventListener(window, this.settings.visibilityEvents, this.visibilityEventsHandler);
         }
 
         return this
@@ -108,7 +108,7 @@ class IdleTs {
         this.resetTimeout(false)
 
         if (this.settings.onShow || this.settings.onHide) {
-            bulkRemoveEventListener(window, this.visibilityEvents, this.visibilityEventsHandler)
+            bulkRemoveEventListener(window, this.settings.visibilityEvents, this.visibilityEventsHandler)
         }
 
         return this

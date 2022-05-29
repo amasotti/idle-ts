@@ -2,6 +2,7 @@
 export interface IdleTsSettings {
     idle: number, // idle time in ms
     events: Array<string>, // events that will trigger the idle resetter
+    visibilityEvents: Array<string>, // events that will trigger the idle resetter
     onIdle: Function, // callback function to be executed after idle time
     onActive: Function, // callback function to be executed after back form idleness
     onHide: Function, // callback function to be executed when window become hidden
