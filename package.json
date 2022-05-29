@@ -1,0 +1,29 @@
+{
+  "name": "idle-ts",
+  "private": true,
+  "author": "Antonio Masotti <toniomasotti@gmail.com>",
+  "version": "1.0.0",
+  "keywords": [
+    "idle",
+    "ts",
+    "user state"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.4",
+    "vite": "^2.9.9"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/idle-ts.es.js",
+      "require": "./dist/idle-ts.umd.js"
+    }
+  },
+  "main": "./dist/idle-ts.umd.js",
+  "module": "./dist/idle-ts.es.js"
+}
