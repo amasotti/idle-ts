@@ -18,7 +18,6 @@ class IdleTs {
   constructor(options) {
     __publicField(this, "defaults");
     __publicField(this, "settings");
-    __publicField(this, "visibilityEvents", ["visibilitychange", "webkitvisibilitychange", "mozvisibilitychange", "msvisibilitychange"]);
     __publicField(this, "idle", false);
     __publicField(this, "visible", true);
     __publicField(this, "clearTimeout");
@@ -35,6 +34,7 @@ class IdleTs {
     this.defaults = {
       idle: 1e4,
       events: ["mousemove", "keydown", "mousedown", "touchstart"],
+      visibilityEvents: ["visibilitychange", "webkitvisibilitychange", "mozvisibilitychange", "msvisibilitychange"],
       onIdle: () => {
       },
       onActive: () => {
@@ -101,7 +101,7 @@ class IdleTs {
     this.timeout();
     bulkAddEventListener(window, this.settings.events, this.idlenessEventsHandler);
     if (this.settings.onShow || this.settings.onHide) {
-      bulkAddEventListener(window, this.visibilityEvents, this.visibilityEventsHandler);
+      bulkAddEventListener(window, this.settings.visibilityEvents, this.visibilityEventsHandler);
     }
     return this;
   }
@@ -110,7 +110,7 @@ class IdleTs {
     bulkRemoveEventListener(window, this.settings.events, this.idlenessEventsHandler);
     this.resetTimeout(false);
     if (this.settings.onShow || this.settings.onHide) {
-      bulkRemoveEventListener(window, this.visibilityEvents, this.visibilityEventsHandler);
+      bulkRemoveEventListener(window, this.settings.visibilityEvents, this.visibilityEventsHandler);
     }
     return this;
   }
