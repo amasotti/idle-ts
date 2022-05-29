@@ -29,10 +29,11 @@ A really simple utility module for tracking user activity on a tab. Usefull to c
 var idle = new IdleJs({
   idle: 10000, // idle time in ms
   events: ['mousemove', 'keydown', 'mousedown', 'touchstart'], // events that will trigger the idle resetter
-  onIdle: , // callback function to be executed after idle time
-  onActive: , // callback function to be executed after back form idleness
-  onHide: , // callback function to be executed when window become hidden
-  onShow: , // callback function to be executed when window become visible
+  visibilityEvents: ['visibilitychange', 'webkitvisibilitychange', 'mozvisibilitychange', 'msvisibilitychange'], // events that will trigger the idle resetter for visibility
+  onIdle: () => {}, // callback function to be executed after idle time
+  onActive: () => {}, // callback function to be executed after back form idleness
+  onHide: () => {}, // callback function to be executed when window become hidden
+  onShow: () => {}, // callback function to be executed when window become visible
   keepTracking: true, // set it to false if you want to be notified only on the first idleness change
   startAtIdle: false // set it to true if you want to start in the idle state
 })
