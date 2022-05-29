@@ -1,5 +1,9 @@
 # idle-ts
-
+[![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-1f425f.svg)](https://www.javascript.com)
+[![Node version](https://badgen.net/npm/node/@amasotti/idle-ts)](https://badgen.net/npm/node/@amasotti/idle-ts)
+[![Npm package version](https://badgen.net/npm/v/@amasotti/idle-ts)](https://www.npmjs.com/package/@amasotti/idle-ts)
+[![Issues](https://badgen.net/github/issues/amasotti/idle-ts)](https://badgen.net/github/issues/amasotti/idle-ts)
+[![License](https://badgen.net/github/license/amasotti/idle-ts)](https://badgen.net/github/license/amasotti/idle-ts)
 
 This is a clone of [idle-js](https://github.com/soixantecircuits/idle-js) with added typescript support. It just checks that 
 the user has not been interacting with the App for a while (the `idle` parameters in ms) and triggers functions according to the user state.
