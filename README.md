@@ -65,11 +65,6 @@ idle.reset({
 })
 ```
 
-## Allowed Options / Customization
-
-```js
-
-
 
 
 ## Running example
