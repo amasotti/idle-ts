@@ -11,6 +11,9 @@ export interface IdleTsSettings {
     recurIdleCall: boolean
 }
 
+/**
+ * Interface for the IdleTs class method which checks if the passed parameters are allowed.
+ */
 export interface ThrowOnBadKeys {
     (keys: Array<string>, allowedKeys: Array<string>): never | void
 }
