@@ -1,6 +1,5 @@
 {
   "name": "idle-ts",
-  "private": true,
   "author": "Antonio Masotti <toniomasotti@gmail.com>",
   "version": "1.0.0",
   "keywords": [
@@ -9,6 +8,19 @@
     "user state"
   ],
   "license": "MIT",
+  "files": [
+    "/dist"
+  ],
+  "issues": {
+    "url": "https://github.com/amasotti/idle-ts/issues"
+  },
+  "bugs": {
+    "url": "https://github.com/amasotti/idle-ts/issues"
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
